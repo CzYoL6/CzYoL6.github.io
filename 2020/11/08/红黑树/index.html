@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/128_128.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32_32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16_16.ico">
+  <link rel="mask-icon" href="/images/128_128.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"czyol6.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"swoopIn","post_header":"swoopIn","post_body":"fadeIn","coll_header":"swoopIn","sidebar":"swoopIn"}}};
+  </script>
+
+  <meta name="description" content="红黑树红黑树的性质 (添加外结点，将外结点null视作叶子结点。) 红黑树是一颗满足下列性质的二叉搜索树：  每个结点或是红色的，或是黑色的。  根结点时黑色的。  每个叶结点(NULL)是黑色的。  如果一个结点是红色的，则它的两个子结点都是黑色的。  对每个结点，从结点到其所有后代叶结点的简单路径上，均包含相同数目的黑色结点。   这些性质通过对任意一条从根到叶子的简单路径上各个结点的颜色进行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="红黑树">
+<meta property="og:url" content="https://czyol6.github.io/2020/11/08/%E7%BA%A2%E9%BB%91%E6%A0%91/index.html">
+<meta property="og:site_name" content="ZyYee&#39;s Blog">
+<meta property="og:description" content="红黑树红黑树的性质 (添加外结点，将外结点null视作叶子结点。) 红黑树是一颗满足下列性质的二叉搜索树：  每个结点或是红色的，或是黑色的。  根结点时黑色的。  每个叶结点(NULL)是黑色的。  如果一个结点是红色的，则它的两个子结点都是黑色的。  对每个结点，从结点到其所有后代叶结点的简单路径上，均包含相同数目的黑色结点。   这些性质通过对任意一条从根到叶子的简单路径上各个结点的颜色进行">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/11/26/4Cu9TpDz5iHwrI6.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/26/GOuWlKsMAjJha27.gif">
+<meta property="og:image" content="https://i.loli.net/2020/11/26/RZ6NYuHthQxP8Uf.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/26/GUDFgJNHBxhw7kY.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/26/jx9ZzOgFS3npNrA.gif">
+<meta property="og:image" content="https://i.loli.net/2020/11/26/F9TfAub284SvHlY.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/26/yNLuYfKj6UCcIkT.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/26/kGROPYCTh3flvrg.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/26/2Levklp5HW3wQPK.gif">
+<meta property="article:published_time" content="2020-11-08T14:30:10.000Z">
+<meta property="article:modified_time" content="2020-12-03T14:07:16.629Z">
+<meta property="article:author" content="ZaiYi">
+<meta property="article:tag" content="红黑树">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/11/26/4Cu9TpDz5iHwrI6.png">
+
+<link rel="canonical" href="https://czyol6.github.io/2020/11/08/%E7%BA%A2%E9%BB%91%E6%A0%91/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>红黑树 | ZyYee's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ZyYee's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">懒人改变世界</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">0</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://czyol6.github.io/2020/11/08/%E7%BA%A2%E9%BB%91%E6%A0%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom_avatar.jpg">
+      <meta itemprop="name" content="ZaiYi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZyYee's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          红黑树
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-08 22:30:10" itemprop="dateCreated datePublished" datetime="2020-11-08T22:30:10+08:00">2020-11-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-03 22:07:16" itemprop="dateModified" datetime="2020-12-03T22:07:16+08:00">2020-12-03</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1><span id="红黑树">红黑树</span></h1><h2><span id="红黑树的性质">红黑树的性质</span></h2><p><img data-src="https://i.loli.net/2020/11/26/4Cu9TpDz5iHwrI6.png" alt="红黑树"></p>
+<p>(添加外结点，将外结点<code>null</code>视作叶子结点。)</p>
+<p>红黑树是一颗满足下列性质的<strong>二叉搜索树</strong>：</p>
+<ol>
+<li><p>每个结点或是红色的，或是黑色的。</p>
+</li>
+<li><p>根结点时黑色的。</p>
+</li>
+<li><p>每个叶结点(NULL)是黑色的。</p>
+</li>
+<li><p>如果一个结点是红色的，则它的两个子结点都是黑色的。</p>
+</li>
+<li><p>对每个结点，从结点到其所有后代叶结点的简单路径上，均包含相同数目的黑色结点。</p>
+</li>
+</ol>
+<p>这些性质通过对任意一条从根到叶子的简单路径上各个结点的颜色进行约束，从而确保没有一条路径会比其他路径长出2倍，因而是<strong><em>近似平衡</em></strong>的。</p>
+<h2><span id="红黑树的基本操作">红黑树的基本操作</span></h2><p>红黑树的插入、删除、查找等操作均与<strong>二叉搜索树</strong>相同。</p>
+<h2><span id="红黑树的调整操作">红黑树的调整操作</span></h2><p>为了维持红黑树的性质，在每一步操作过后均需进行<strong>调整</strong>。</p>
+<h3><span id="插入">插入</span></h3><p>新插入的结点<code>x</code>默认设为红色，其两个叶子节点为黑色。</p>
+<ul>
+<li><p>若<code>x</code>的父节点为黑色，则无需调整。可以看作<code>x</code>的黑叶子节点替换了原来父节点的黑叶子节点，因此路径上的黑色结点数不会变化。</p>
+<p><img data-src="https://i.loli.net/2020/11/26/GOuWlKsMAjJha27.gif" alt="插入3，父节点为黑色，无需调整" style="zoom:80%;"></p>
+</li>
+<li><p>若<code>x</code>的父节点为红色，由于<code>x</code>为红色，因此违反了<strong>性质4</strong>。</p>
+<p>分以下两种情况进行调整：</p>
+<ul>
+<li><p><code>x</code>父亲的兄弟节点为红色。</p>
+<p><strong>1. 插入<code>0</code>：</strong><img data-src="https://i.loli.net/2020/11/26/RZ6NYuHthQxP8Uf.png" alt="插入0"></p>
+<p><strong>2. 父亲<code>1</code>和父亲的兄弟<code>3</code>变为黑色，祖父<code>2</code>变为红色：</strong></p>
+<p><img data-src="https://i.loli.net/2020/11/26/GUDFgJNHBxhw7kY.png" alt="父亲和兄弟变为黑色，祖父变为红色"></p>
+<p><strong>3. 以祖父</strong><code>2</code>为基础重复整个插入调整的过程直至满足条件。（即把祖父当作一个新插入的结点，本例中无需调整）</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>  ​        <strong>整个过程：</strong></p>
+<p>  <img data-src="https://i.loli.net/2020/11/26/jx9ZzOgFS3npNrA.gif" alt="整个过程" style="zoom:80%;"></p>
+<ul>
+<li><p><code>x</code>父亲的兄弟节点为黑色。</p>
+<p>再分两个情况：</p>
+<ul>
+<li><p><code>x</code>、<code>x</code>的父亲、<code>x</code>祖父成直线。（<code>x</code>、<code>x</code>的父亲均为各自父亲的左孩子或者均为右孩子）：</p>
+<p><strong>以下面为例：</strong></p>
+<p><strong>1. 插入</strong><code>0</code>，<strong>成“/”</strong></p>
+<p><img data-src="https://i.loli.net/2020/11/26/F9TfAub284SvHlY.png" alt></p>
+<p><strong>2. 右旋祖父</strong><code>2</code></p>
+<p><img data-src="https://i.loli.net/2020/11/26/yNLuYfKj6UCcIkT.png" alt="右旋2"></p>
+<p><strong>3. 变色：父亲</strong><code>1</code><strong>变成黑色</strong>，<strong>祖父</strong><code>2</code><strong>变成红色</strong></p>
+<p><img data-src="https://i.loli.net/2020/11/26/kGROPYCTh3flvrg.png" alt="变色"></p>
+<p><strong>整个过程：</strong></p>
+<p><img data-src="https://i.loli.net/2020/11/26/2Levklp5HW3wQPK.gif" alt="整个过程" style="zoom:80%;"></p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>（**\\字形操作正好相反**）
+
+- `x`、`x`的父亲、`x`祖父成折线。（`x`为其父亲的左孩子、`x`的父亲为其父亲的右孩子，或者反之）：
+
+  通过左旋或右旋父节点将这种情况转换为**直线型**。
+
+  **以下面“&lt;”形为例：**
+
+  **1. 插入**`1`
+
+  ![插入1](https://i.loli.net/2020/11/26/b9HIku685G27Aqn.png)
+
+  **2. 左旋父节点**`0`，**此时已经变为直线型，之后的操作与直线完全一致。**
+
+
+
+  ![左旋0](https://i.loli.net/2020/11/26/josRFpPbzE6AfCm.png)
+
+  **3. 右旋祖父**`2`
+
+  ![右旋2](https://i.loli.net/2020/11/26/5JK7bpxFC386uYS.png)
+
+  **4. 变色：父亲**`1`**变成黑色**，**祖父**`2`**变成红色**
+
+  ![变色](https://i.loli.net/2020/11/26/kGROPYCTh3flvrg.png)
+
+  **整个过程：**
+
+  &lt;img src=&quot;https://i.loli.net/2020/11/26/WYUoBEpT1suLnkv.gif&quot; alt=&quot;整个过程&quot; style=&quot;zoom:80%;&quot; /&gt;
+</code></pre><h3><span id="删除">删除</span></h3><p>未完待续</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%BA%A2%E9%BB%91%E6%A0%91/" rel="tag"><i class="fa fa-tag"></i> 红黑树</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/08/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" rel="prev" title="二叉搜索树">
+      <i class="fa fa-chevron-left"></i> 二叉搜索树
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/12/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" rel="next" title="拓扑排序">
+      拓扑排序 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">红黑树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">红黑树的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">红黑树的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">红黑树的调整操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.1.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.2.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ZaiYi"
+      src="/images/custom_avatar.jpg">
+  <p class="site-author-name" itemprop="name">ZaiYi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:zaiyi16121@sina.cn" title="E-Mail → mailto:zaiyi16121@sina.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZaiYi</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">NaNm</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/128_128.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32_32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16_16.ico">
+  <link rel="mask-icon" href="/images/128_128.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"czyol6.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"swoopIn","post_header":"swoopIn","post_body":"fadeIn","coll_header":"swoopIn","sidebar":"swoopIn"}}};
+  </script>
+
+  <meta name="description" content="Github | Git自己关于Github和Git使用的一些笔记，日后会不断补充。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github、Git常用指令和概念">
+<meta property="og:url" content="https://czyol6.github.io/2020/07/30/Github%E3%80%81Git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%A6%82%E5%BF%B5/index.html">
+<meta property="og:site_name" content="ZyYee&#39;s Blog">
+<meta property="og:description" content="Github | Git自己关于Github和Git使用的一些笔记，日后会不断补充。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/30/auO3Zj.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/07/30/aK4qmt.png">
+<meta property="article:published_time" content="2020-07-30T12:46:38.177Z">
+<meta property="article:modified_time" content="2020-11-02T03:13:06.972Z">
+<meta property="article:author" content="ZaiYi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/07/30/auO3Zj.png">
+
+<link rel="canonical" href="https://czyol6.github.io/2020/07/30/Github%E3%80%81Git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%A6%82%E5%BF%B5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Github、Git常用指令和概念 | ZyYee's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ZyYee's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">懒人改变世界</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">0</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://czyol6.github.io/2020/07/30/Github%E3%80%81Git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%A6%82%E5%BF%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom_avatar.jpg">
+      <meta itemprop="name" content="ZaiYi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZyYee's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Github、Git常用指令和概念
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-30 20:46:38" itemprop="dateCreated datePublished" datetime="2020-07-30T20:46:38+08:00">2020-07-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-02 11:13:06" itemprop="dateModified" datetime="2020-11-02T11:13:06+08:00">2020-11-02</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1><span id="github-git">Github | Git</span></h1><p>自己关于Github和Git使用的一些笔记，日后会不断补充。</p>
+<!-- toc -->
+<ul>
+<li><a href="#-more-"><a id="more"></a></a></li>
+<li><a href="#github重要概念">Github重要概念</a><ul>
+<li><a href="#fork">Fork</a></li>
+<li><a href="#pull-request">Pull request</a></li>
+<li><a href="#watch">Watch</a></li>
+<li><a href="#issue">Issue</a></li>
+</ul>
+</li>
+<li><a href="#github开源项目贡献流程">Github开源项目贡献流程</a></li>
+<li><a href="#git仓库中文件的4中状态">Git仓库中文件的4中状态</a></li>
+<li><a href="#git常用操作">Git常用操作</a></li>
+</ul>
+<!-- tocstop -->
+<h2><span id><!-- more --></span></h2><h2><span id="github重要概念">Github重要概念</span></h2><h3><span id="fork">Fork</span></h3><p>将别人的项目复制克隆到自己的仓库，与原仓库独立</p>
+<h3><span id="pull-request">Pull request</span></h3><p>对克隆的仓库作出修改后，向原仓库发起pull request，原作者查看后感觉不错，可以选择合并。</p>
+<p><img data-src="https://s1.ax1x.com/2020/07/30/auO3Zj.png" alt></p>
+<h3><span id="watch">Watch</span></h3><p>关注仓库，更新时会接收到通知</p>
+<h3><span id="issue">Issue</span></h3><p>发现bug，发起讨论</p>
+<h2><span id="github开源项目贡献流程">Github开源项目贡献流程</span></h2><ul>
+<li>Fork仓库</li>
+<li>在forked仓库中修改</li>
+<li>提交pull request</li>
+<li>等待作者操作</li>
+</ul>
+<h2><span id="git仓库中文件的4中状态">Git仓库中文件的4中状态</span></h2><p><img data-src="https://s1.ax1x.com/2020/07/30/aK4qmt.png" alt></p>
+<h2><span id="git常用操作">Git常用操作</span></h2><ul>
+<li><p><code>git config --global user.name &quot;name&quot;</code><br><strong>配置用户名</strong></p>
+</li>
+<li><p><code>git config --global user.email &quot;email&quot;</code><br><strong>配置用户邮箱</strong></p>
+</li>
+<li><p><code>git config --list</code><br><strong>查看git配置信息</strong></p>
+</li>
+<li><p><code>git init</code><br><strong>初始化本地git仓库</strong></p>
+</li>
+<li><p><code>git log</code><br><strong>查看本地日志，即当前分支的历史版本</strong></p>
+</li>
+<li><p><code>git  reflog</code><br><strong>查看远端日志，即</strong></p>
+</li>
+<li><p><code>git add name</code><br><strong>添加名为name的文件到暂存区</strong></p>
+</li>
+<li><p><code>git add .</code><br><strong>添加所有文件到暂存区</strong></p>
+</li>
+<li><p><code>git rm name</code><br><strong>从暂存区删除名为name的文件</strong></p>
+</li>
+<li><p><code>git commit -m &quot;string&quot;</code><br><strong>将本地修改过的文件提交到本地仓库</strong></p>
+</li>
+<li><p><code>git push</code><br><strong>将本地仓库的更新发送到远端</strong></p>
+</li>
+<li><p><code>git push --set-upstream origin &lt;name&gt;</code><br><strong>将name分支(本地新切的分支)的上流分支设置为远端的分支(origin)</strong></p>
+</li>
+<li><p><code>git pull</code><br><strong>拉取最新的commit = fetch + 自动merge</strong></p>
+</li>
+<li><p><code>git status</code><br><strong>查看所有文件的状态</strong></p>
+</li>
+<li><p><code>git status -s</code><br><strong>查看所有文件的状态（以简洁的方式）</strong></p>
+</li>
+<li><p><code>git branch</code><br><strong>查看所有本地分支</strong></p>
+</li>
+<li><p><code>git merge &lt;branchName&gt;</code><br><strong>合并branchName分支变更到当前分支</strong></p>
+</li>
+<li><p><code>git fetch</code><br><strong>拉取远端仓库分支</strong></p>
+</li>
+</ul>
+<ul>
+<li><p><code>git clone url</code><br><strong>克隆仓库到本地</strong></p>
+</li>
+<li><p><code>git checkout -b &lt;name&gt; &lt;template&gt;</code><br><strong>创建新的分支(name:新分支的名字，template:以哪个分支或commit 为模板，缺省默认为当前分支) 新建的分支会继承模板的commit记录，而后便与之独立</strong></p>
+</li>
+</ul>
+<ul>
+<li><p><code>git checkout &lt;name&gt;</code><br><strong>切换到name分支</strong></p>
+</li>
+<li><p><code>git checkout develop</code><br><strong>切换到develop分支</strong></p>
+</li>
+<li><p><code>git checkout master</code><br><strong>切换到master分支</strong></p>
+</li>
+<li><p><code>git reset id --hard</code><br><strong>不保存所有变更</strong></p>
+</li>
+<li><p><code>git reset id --soft</code><br><strong>保留变更且变更内容处于staged</strong></p>
+</li>
+<li><p><code>git reset id --mixed</code><br><strong>保留变更且变更内容处于modified（缺省默认）</strong></p>
+</li>
+<li><p><code>git rm --cached index.html</code></p>
+<p><strong>删除缓存中的文件</strong></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/02/%E6%AC%A1%E7%9F%AD%E8%B7%AF/" rel="next" title="次短路">
+      次短路 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Github | Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">Github重要概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.1.</span> <span class="nav-text">Fork</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.2.</span> <span class="nav-text">Pull request</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.3.</span> <span class="nav-text">Watch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.4.</span> <span class="nav-text">Issue</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">Github开源项目贡献流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">Git仓库中文件的4中状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">Git常用操作</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ZaiYi"
+      src="/images/custom_avatar.jpg">
+  <p class="site-author-name" itemprop="name">ZaiYi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:zaiyi16121@sina.cn" title="E-Mail → mailto:zaiyi16121@sina.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZaiYi</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">NaNm</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
