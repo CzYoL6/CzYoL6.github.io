@@ -126,7 +126,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -136,7 +136,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a>
 
   </li>
   </ul>
@@ -159,6 +159,241 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://czyol6.github.io/2021/02/27/Nodejs%E5%A4%84%E7%90%86HTTP%E8%AF%B7%E6%B1%82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom_avatar.jpg">
+      <meta itemprop="name" content="ZaiYi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZyYee's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/27/Nodejs%E5%A4%84%E7%90%86HTTP%E8%AF%B7%E6%B1%82/" class="post-title-link" itemprop="url">Nodejs处理HTTP请求</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-27 14:41:06 / 修改时间：15:40:31" itemprop="dateCreated datePublished" datetime="2021-02-27T14:41:06+08:00">2021-02-27</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Nodejs处理HTTP请求"><a href="#Nodejs处理HTTP请求" class="headerlink" title="Nodejs处理HTTP请求"></a>Nodejs处理HTTP请求</h1><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><ul>
+<li><p>创建服务器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//处理请求</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>服务器每收到一条http请求，都会用新的<code>req</code>和<code>res</code>对象出发回调函数。</p>
+</li>
+</ul>
+          <!--noindex-->
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://czyol6.github.io/2021/02/27/Nodejs%20&%20Express/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom_avatar.jpg">
+      <meta itemprop="name" content="ZaiYi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZyYee's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/27/Nodejs%20&%20Express/" class="post-title-link" itemprop="url">Nodejs & Express</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-27 10:52:24 / 修改时间：14:39:30" itemprop="dateCreated datePublished" datetime="2021-02-27T10:52:24+08:00">2021-02-27</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Nodejs-amp-Express"><a href="#Nodejs-amp-Express" class="headerlink" title="Nodejs &amp; Express"></a>Nodejs &amp; Express</h1><p><strong>CRUD</strong> = <strong>C</strong>reate <strong>R</strong>ead <strong>U</strong>pdate <strong>D</strong>elete</p>
+<h2 id="Http-Request"><a href="#Http-Request" class="headerlink" title="Http Request"></a>Http Request</h2><ul>
+<li><strong>GET:</strong> 获取资源</li>
+<li><strong>PUT:</strong> 更新资源</li>
+<li><strong>DELETE:</strong> 删除资源</li>
+<li><strong>POST:</strong> 新建资源</li>
+</ul>
+          <!--noindex-->
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://czyol6.github.io/2020/12/03/Github%E3%80%81Git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%A6%82%E5%BF%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom_avatar.jpg">
+      <meta itemprop="name" content="ZaiYi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZyYee's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/03/Github%E3%80%81Git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%A6%82%E5%BF%B5/" class="post-title-link" itemprop="url">Github | Git</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-03 10:48:30" itemprop="dateCreated datePublished" datetime="2020-12-03T10:48:30+08:00">2020-12-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-27 14:39:09" itemprop="dateModified" datetime="2021-02-27T14:39:09+08:00">2021-02-27</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Github-Git"><a href="#Github-Git" class="headerlink" title="Github | Git"></a>Github | Git</h1><p>自己关于Github和Git使用的一些笔记，日后会不断补充。</p>
+<!-- toc -->
+<ul>
+<li><a href="#github重要概念">Github重要概念</a><ul>
+<li><a href="#fork">Fork</a></li>
+<li><a href="#pull-request">Pull request</a></li>
+<li><a href="#watch">Watch</a></li>
+<li><a href="#issue">Issue</a></li>
+</ul>
+</li>
+<li><a href="#github开源项目贡献流程">Github开源项目贡献流程</a></li>
+<li><a href="#git仓库中文件的4中状态">Git仓库中文件的4中状态</a></li>
+<li><a href="#git常用操作">Git常用操作</a></li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -186,10 +421,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-12-03 10:48:30 / 修改时间：23:36:41" itemprop="dateCreated datePublished" datetime="2020-12-03T10:48:30+08:00">2020-12-03</time>
+              <time title="创建时间：2020-12-03 10:48:30" itemprop="dateCreated datePublished" datetime="2020-12-03T10:48:30+08:00">2020-12-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-27 14:39:13" itemprop="dateModified" datetime="2021-02-27T14:39:13+08:00">2021-02-27</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -233,232 +474,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://czyol6.github.io/2020/12/03/Django/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom_avatar.jpg">
-      <meta itemprop="name" content="ZaiYi">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZyYee's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/03/Django/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-03 10:45:46" itemprop="dateCreated datePublished" datetime="2020-12-03T10:45:46+08:00">2020-12-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-15 13:30:03" itemprop="dateModified" datetime="2020-11-15T13:30:03+08:00">2020-11-15</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>452</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="django">Django</span></h1><h2><span id="安装和配置虚拟环境">安装和配置虚拟环境</span></h2><p>通过<code>pip freeze</code>查看当前已经安装的包：</p>
-<p><img data-src="https://i.loli.net/2020/11/15/OfZcXqYnRL412dv.png" alt></p>
-<p>安装<strong>virtualenv</strong>（虚拟环境），不同虚拟环境中的包不会互相影响。</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> virtualenv</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://i.loli.net/2020/11/15/a9pRxlOLhC7NXcj.png" alt></p>
-<p>创建一个文件夹作并进入，输入<code>virtualenv .</code>将其作为<strong>虚拟环境</strong></p>
-<p><img data-src="https://i.loli.net/2020/11/15/5GEZPThUi41DHLu.png" alt></p>
-<p><code>.\Scripts\activate</code>进入<strong>虚拟环境</strong>（<code>deactivate</code>退出<strong>虚拟环境</strong>）</p>
-<p>然后安装最新版本的<strong>django</strong>:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> django</span><br><span class="line">//指定版本：pip <span class="keyword">install</span> django==<span class="keyword">version</span></span><br></pre></td></tr></table></figure>
-<h2><span id="创建项目">创建项目</span></h2><p>进入虚拟环境后，输入</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">django-admin startproject newproject</span></span><br></pre></td></tr></table></figure>
-<p>可以看到目录下项目创建成功：</p>
-<p><img data-src="https://i.loli.net/2020/11/15/KFIwSomkLrf8YeR.png" alt></p>
-<h2><span id="启动项目">启动项目</span></h2><p>进入mysite文件夹</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> .\manage.<span class="keyword">py</span> runserver</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://i.loli.net/2020/11/15/OXUEpg92vKnHAic.png" alt></p>
-<p>注意到其中有一段错误<code>You have xx unapplied migration(s).</code>，原因是在配置文件 setting.py中默认开启了数据库sqlite的连接。</p>
-<p><strong>修复:</strong></p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> .\manage.<span class="keyword">py</span> migrate</span><br></pre></td></tr></table></figure>
-<p>再重新运行。</p>
-<p><img data-src="https://i.loli.net/2020/11/15/jmN63BZzb5QR7I1.png" alt></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://czyol6.github.io/2020/12/03/RESTful%20API%20with%20Nodejs%20&%20Express/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom_avatar.jpg">
-      <meta itemprop="name" content="ZaiYi">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZyYee's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/03/RESTful%20API%20with%20Nodejs%20&%20Express/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-03 10:45:35" itemprop="dateCreated datePublished" datetime="2020-12-03T10:45:35+08:00">2020-12-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-15 12:46:25" itemprop="dateModified" datetime="2020-11-15T12:46:25+08:00">2020-11-15</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="restful-api-with-nodejs-amp-express">RESTful API with Nodejs &amp; Express</span></h1><h2><span id="含义及特点">含义及特点</span></h2><p><strong>REST</strong> = <strong>Re</strong>presentational <strong>S</strong>tate <strong>Transfer</strong></p>
-<p>RESTFUL特点包括：</p>
-<ul>
-<li><p>每一个URI代表1种资源；</p>
-</li>
-<li><p>客户端使用GET、POST、PUT、DELETE4个表示操作方式的动词对服务端资源进行操作：GET用来获取资源，POST用来新建资源（也可以用于更新资源），PUT用来更新资源，DELETE用来删除资源；</p>
-</li>
-<li><p>通过操作资源的表现形式来操作资源；</p>
-</li>
-<li><p>资源的表现形式是XML或者HTML；</p>
-</li>
-<li><p>客户端与服务端之间的交互在请求之间是无状态的，从客户端到服务端的每个请求都必须包含理解请求所必需的信息。</p>
-</li>
-</ul>
-<p><strong>CRUD</strong> = <strong>C</strong>reate <strong>R</strong>ead <strong>U</strong>pdate <strong>D</strong>elete</p>
-<h2><span id="http-request">Http Request</span></h2><ul>
-<li><strong>GET:</strong> 获取资源</li>
-<li><strong>PUT:</strong> 更新资源</li>
-<li><strong>DELETE:</strong> 删除资源</li>
-<li><strong>POST:</strong> 新建资源</li>
-</ul>
-<h2><span id="framework-express">Framework : Express</span></h2><p><a target="_blank" rel="noopener" href="http://expressjs.com/en/4x/api.html">http://expressjs.com/en/4x/api.html</a></p>
-<ul>
-<li><strong>初始化</strong></li>
-</ul>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> init --<span class="literal">yes</span></span><br><span class="line"><span class="built_in">npm</span> install express</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>app.get(), app.post(), app.put(), app.delete()</strong>与http request一一对应。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    res.send(<span class="string">&#x27;Hello World&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&#x27;/api/courses&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    res.send([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//命令行中使用express PORT=5000(MAC), set PORT=5000(WINDOWS)来在环境变量中设置端口</span></span><br><span class="line"><span class="keyword">const</span> port = process.env.PORT || <span class="number">3000</span>;</span><br><span class="line">app.listen(port, <span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`listening on port <span class="subst">$&#123;port&#125;</span>`</span>));</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>使用<strong>Express</strong>后可以更好地组织不同的route。</p>
-</li>
-<li><p><strong>Parameters</strong></p>
-<p><strong>Route parameters:</strong>  要查询的属性和编号等等</p>
-<p><code>http://localhost:5000/api/posts/2020/11</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&#x27;/api/posts/:year/:month&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    res.send(req.params);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>  <strong>Query parameters:</strong>  附加的查询条件</p>
-<p>  <code>http://localhost:5000/api/posts/2020/11?sortBy=name</code></p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&#x27;/api/posts/:year/:month&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    res.send(req.query);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>GET request</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&#x27;/api/courses/:id&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> course = courses.find((<span class="function"><span class="params">c</span> =&gt;</span> c.id === <span class="built_in">parseInt</span>(req.params.id)));</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//找不到资源时状态为404</span></span><br><span class="line">    <span class="keyword">if</span> (!course) res.status(<span class="number">404</span>).send(<span class="string">&#x27;The course with the given ID was not found.&#x27;</span>);</span><br><span class="line">    <span class="keyword">else</span> res.send(course);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p><strong>POST request</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在处理管线中加入中间件，来使用解析json</span></span><br><span class="line">app.use(express.json());</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">app.post(<span class="string">&#x27;/api/courses&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> course = &#123;</span><br><span class="line">        id: courses.length + <span class="number">1</span>,</span><br><span class="line">        name: req.body.name</span><br><span class="line">    &#125;;</span><br><span class="line">    courses.push(course);</span><br><span class="line">    <span class="comment">//创建后，将其返回</span></span><br><span class="line">    res.send(course);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>在<strong>Postman</strong>中测试：</p>
-<p><img data-src="https://i.loli.net/2020/11/13/FCq18diDO67aZMT.png" alt="测试"></p>
-</li>
-<li><p><strong>Input Validation</strong></p>
-<p>如果不符合要求，返回状态400(Bad Request)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">app.post(<span class="string">&#x27;/api/courses&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!req.body.name || req.body.name.length &lt; <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="comment">//400 Bad Request</span></span><br><span class="line">        res.status(<span class="number">400</span>).send(<span class="string">&#x27;Name is required and should be minimum 3 characters.&#x27;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> course = &#123;</span><br><span class="line">        id: courses.length + <span class="number">1</span>,</span><br><span class="line">        name: req.body.name</span><br><span class="line">    &#125;;</span><br><span class="line">    courses.push(course);</span><br><span class="line">    <span class="comment">//创建后，将其返回</span></span><br><span class="line">    res.send(course);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>这样简单的处理不适用于大型或者复杂的项目。</p>
-<p><strong>使用JOI：</strong></p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://czyol6.github.io/2020/12/03/Node.js/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -473,7 +488,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/12/03/Node.js/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/2020/12/03/Node.js/" class="post-title-link" itemprop="url">Nodejs</a>
         </h2>
 
         <div class="post-meta">
@@ -483,14 +498,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-12-03 10:45:31" itemprop="dateCreated datePublished" datetime="2020-12-03T10:45:31+08:00">2020-12-03</time>
+              <time title="创建时间：2020-12-03 10:48:30" itemprop="dateCreated datePublished" datetime="2020-12-03T10:48:30+08:00">2020-12-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-13 18:27:45" itemprop="dateModified" datetime="2020-11-13T18:27:45+08:00">2020-11-13</time>
+                <time title="修改时间：2021-02-27 15:59:48" itemprop="dateModified" datetime="2021-02-27T15:59:48+08:00">2021-02-27</time>
               </span>
 
           <br>
@@ -511,43 +526,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="nodejs">Node.js</span></h1><h2><span id="什么是nodejs">什么是<code>node.js</code>？</span></h2><p><em>Node</em>.<em>js</em> is a JavaScript runtime built on Chrome’s V8 JavaScript engine.（基于Chrome的V8 JavaScript引擎构建的JavaScript运行时。）</p>
-<h2><span id="module">Module</span></h2><h3><span id="创建module">创建Module</span></h3><ul>
-<li>每个js文件都是一个module。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">module</span>);</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://i.loli.net/2020/11/12/4ODeXq1vk8xzYQr.png" alt></p>
-<p>其中的变量和函数对于其他module都是不可见的。</p>
-<p>可以通过<code>module.exports.xx = xxx;</code>来将其变为public。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//logger.js</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">&#x27;http://mylogger.io/log&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">message</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports.log = log;</span><br><span class="line"><span class="built_in">module</span>.exports.endPoint = url;</span><br></pre></td></tr></table></figure>
-<h3><span id="加载modulerequire">加载Module——<code>require</code></span></h3>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> logger = <span class="built_in">require</span>(<span class="string">&quot;./logger.js&quot;</span>); <span class="comment">//   &quot;./logger&quot;省略.js也可以</span></span><br><span class="line">logger.log(<span class="string">&quot;hhh&quot;</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>用module名代表一个函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//logger.js</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">&#x27;http://mylogger.io/log&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">message</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = log;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> log = <span class="built_in">require</span>(<span class="string">&quot;./logger.js&quot;</span>); <span class="comment">//此时log是一个函数</span></span><br><span class="line">log(<span class="string">&quot;hhh&quot;</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3><span id="module-wrapper-function">Module Wrapper Function</span></h3><p>nodejs中的module其实被一个<code>module wrapper function</code>包裹，参数列表中的参数包含经常使用的：</p>
-<ul>
-<li>exports: module.exports的引用，不能直接赋值（如<code>exports = function()&#123;&#125;</code>），因为exports一直代表module.exports。但是可以使用<code>exports.log = log;</code>。</li>
-<li>require: 加载module</li>
-<li>module: 该模块</li>
-<li>__filename: 该模块的文件名</li>
-<li>__dirname: 该文件的路径（不包含文件名）</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"><span class="built_in">exports</span>, <span class="built_in">require</span>, <span class="built_in">module</span>, __filename, __dirname</span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3><span id="常用module">常用Module</span></h3><p><a target="_blank" rel="noopener" href="https://nodejs.org/dist/latest-v14.x/docs/api/">https://nodejs.org/dist/latest-v14.x/docs/api/</a></p>
-<ul>
-<li>使用built-in module</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);  <span class="comment">//不需要加./or../or/</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h4><span id="path-module">Path Module</span></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> pathObj = path.parse(__filename);</span><br><span class="line"><span class="built_in">console</span>.log(pathObj);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">output:</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">  root: &#x27;D:\\&#x27;,</span></span><br><span class="line"><span class="comment">  dir: &#x27;D:\\Programming\\Nodejs&#x27;,</span></span><br><span class="line"><span class="comment">  base: &#x27;app.js&#x27;,</span></span><br><span class="line"><span class="comment">  ext: &#x27;.js&#x27;,</span></span><br><span class="line"><span class="comment">  name: &#x27;app&#x27;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h4><span id="os-mudule">OS Mudule</span></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> os = <span class="built_in">require</span>(<span class="string">&#x27;os&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> totalMemory = os.totalmem();</span><br><span class="line"><span class="keyword">var</span> freeMemory = os.freemem();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`Total Memory: <span class="subst">$&#123;totalMemory&#125;</span>`</span>);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">output:</span></span><br><span class="line"><span class="comment">Total Memory: 16890318848</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h4><span id="file-system-module">File System Module</span></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="comment">//blocking , synchronous</span></span><br><span class="line"><span class="keyword">const</span> files = fs.readdirSync(<span class="string">&#x27;./&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(files);</span><br><span class="line"></span><br><span class="line"><span class="comment">//non-blocking, asynchronous with call-back function</span></span><br><span class="line">fs.readdir(<span class="string">&#x27;./&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, files</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) <span class="built_in">console</span>.log(<span class="string">&#x27;Error: &#x27;</span>, err);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">console</span>.log(files);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4><span id="event-module">Event Module</span></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//logger.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> EventEmitter = <span class="built_in">require</span>(<span class="string">&#x27;events&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger</span> <span class="keyword">extends</span> <span class="title">EventEmitter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="title">log</span>(<span class="params">message</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(message);</span><br><span class="line">        <span class="comment">//emit an event</span></span><br><span class="line">        <span class="built_in">this</span>.emit(<span class="string">&#x27;messageLogged&#x27;</span>, &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">url</span>: <span class="string">&#x27;http://&#x27;</span> &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = Logger;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Logger = <span class="built_in">require</span>(<span class="string">&#x27;./logger&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> logger = <span class="keyword">new</span> Logger();</span><br><span class="line"></span><br><span class="line"><span class="comment">//Register a listener</span></span><br><span class="line">logger.on(<span class="string">&#x27;messageLogged&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;listener logged&#x27;</span>, arg);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">logger.log(<span class="string">&#x27;message&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h4><span id="http-module">Http Module</span></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (req.url === <span class="string">&#x27;/&#x27;</span>) &#123;</span><br><span class="line">        res.write(<span class="string">&#x27;Hello World!&#x27;</span>);</span><br><span class="line">        res.end();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (req.url === <span class="string">&#x27;/api/courses&#x27;</span>) &#123;</span><br><span class="line">        res.write(<span class="built_in">JSON</span>.stringify([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]));</span><br><span class="line">        res.end();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// server.on(&#x27;connection&#x27;, (socket) =&gt; &#123;</span></span><br><span class="line"><span class="comment">//     console.log(&#x27;new connection&#x27;);</span></span><br><span class="line"><span class="comment">// &#125;)</span></span><br><span class="line">server.listen(<span class="number">3000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;listening on port 3000&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
+          <h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><h2 id="什么是node-js？"><a href="#什么是node-js？" class="headerlink" title="什么是node.js？"></a>什么是<code>node.js</code>？</h2><p><em>Node</em>.<em>js</em> is a JavaScript runtime built on Chrome’s V8 JavaScript engine.（基于Chrome的V8 JavaScript引擎构建的JavaScript运行时。）</p>
+          <!--noindex-->
+          <!--/noindex-->
+        
       
     </div>
 
@@ -597,7 +579,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-03 22:07:26" itemprop="dateModified" datetime="2020-12-03T22:07:26+08:00">2020-12-03</time>
+                <time title="修改时间：2021-02-27 14:38:41" itemprop="dateModified" datetime="2021-02-27T14:38:41+08:00">2021-02-27</time>
               </span>
 
           <br>
@@ -618,23 +600,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="平衡二叉树">平衡二叉树</span></h1><h2><span id="平衡二叉树的性质">平衡二叉树的性质</span></h2><ul>
+          <h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><h2 id="平衡二叉树的性质"><a href="#平衡二叉树的性质" class="headerlink" title="平衡二叉树的性质"></a>平衡二叉树的性质</h2><ul>
 <li>对于任意结点，其左右子树必为平衡二叉树，且左右子树的高度差的绝对值$\leq 1$。</li>
 <li>插入，查找，删除的时间复杂度最好情况和最坏情况都维持在$O(logN)$。</li>
 </ul>
-<h2><span id="几种操作">几种操作</span></h2><h3><span id="左旋">左旋</span></h3><p><img data-src="https://i.loli.net/2020/11/08/uHLkZ3aDzA9OE8R.gif" alt="左旋结点5" style="zoom:80%;"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">rotateLeft</span><span class="params">(Entry&lt;K,V&gt; p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p != <span class="keyword">null</span>) &#123;</span><br><span class="line">        Entry&lt;K,V&gt; r = p.right;</span><br><span class="line">        p.right = r.left;</span><br><span class="line">        <span class="keyword">if</span> (r.left != <span class="keyword">null</span>)</span><br><span class="line">            r.left.parent = p;</span><br><span class="line">        r.parent = p.parent;</span><br><span class="line">        <span class="keyword">if</span> (p.parent == <span class="keyword">null</span>)</span><br><span class="line">            root = r;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p.parent.left == p)</span><br><span class="line">            p.parent.left = r;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            p.parent.right = r;</span><br><span class="line">        r.left = p;</span><br><span class="line">        p.parent = r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="右旋">右旋</span></h3><p><img data-src="https://i.loli.net/2020/11/08/K7pYsejfqBZT5Dm.gif" alt="右旋结点5" style="zoom:80%;"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">rotateRight</span><span class="params">(Entry&lt;K,V&gt; p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p != <span class="keyword">null</span>) &#123;</span><br><span class="line">        Entry&lt;K,V&gt; l = p.left;</span><br><span class="line">        p.left = l.right;</span><br><span class="line">        <span class="keyword">if</span> (l.right != <span class="keyword">null</span>) l.right.parent = p;</span><br><span class="line">        l.parent = p.parent;</span><br><span class="line">        <span class="keyword">if</span> (p.parent == <span class="keyword">null</span>)</span><br><span class="line">            root = l;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p.parent.right == p)</span><br><span class="line">            p.parent.right = l;</span><br><span class="line">        <span class="keyword">else</span> p.parent.left = l;</span><br><span class="line">        l.right = p;</span><br><span class="line">        p.parent = l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="失衡的调整">失衡的调整</span></h2><h3><span id="ll型调整">LL型调整</span></h3><p><img data-src="https://i.loli.net/2020/11/08/LEz5Rer3GsYAbUN.gif" alt="插入1后，3失衡，右旋3" style="zoom:80%;"></p>
-<p>当一个子树因为在其左子结点的左子树插入结点而失衡时，右旋根节点</p>
-<h3><span id="rr型调整">RR型调整</span></h3><p><img data-src="https://i.loli.net/2020/11/08/MgF7LvZ3kV2SdEY.gif" alt="插入9后，6失衡，左旋6" style="zoom:80%;"></p>
-<p>当一个子树因为在其右子节点的右子树插入结点而失衡时，左旋根节点</p>
-<h3><span id="lr型调整">LR型调整</span></h3><p><img data-src="https://i.loli.net/2020/11/26/oZRwUtf6aHFnWJS.gif" alt="8失衡，左旋5，右旋8" style="zoom:80%;"></p>
-<p>当一个子树因为在其左子结点的右子树插入结点而失衡时，左旋左子结点，再右旋根节点</p>
-<h3><span id="rl型调整">RL型调整</span></h3><p><img data-src="D:/Programming/BST-Visualization-Tool/Tree_Data/Capture/GifCapture-202011261103449463.gif" alt="2失衡，右旋8，左旋2" style="zoom:80%;"></p>
-<p>当一个子树因为在其右子节点的左子树插入结点而失衡时，右旋右子结点，再左旋根节点</p>
-
+          <!--noindex-->
+          <!--/noindex-->
+        
       
     </div>
 
@@ -706,6 +678,82 @@
 
       
           <h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><p>​    用一个有向图来表示，图中的顶点代表活动(子工程)，图中的有向边代表活动的先后关系，即有向边的起点的活动是终点活动的前序活动，只有当起点活动完成之后，其终点活动才能进行。通常，我们把这种顶点表示活动、边表示活动间先后关系的有向图称做<strong>顶点活动网</strong>(Activity On Vertex network)，简称<strong>AOV</strong>网。</p>
+          <!--noindex-->
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://czyol6.github.io/2020/11/08/Django/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom_avatar.jpg">
+      <meta itemprop="name" content="ZaiYi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZyYee's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/08/Django/" class="post-title-link" itemprop="url">Django安装和配置虚拟环境</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-08 22:30:10" itemprop="dateCreated datePublished" datetime="2020-11-08T22:30:10+08:00">2020-11-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-27 14:38:49" itemprop="dateModified" datetime="2021-02-27T14:38:49+08:00">2021-02-27</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>452</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Django安装和配置虚拟环境"><a href="#Django安装和配置虚拟环境" class="headerlink" title="Django安装和配置虚拟环境"></a>Django安装和配置虚拟环境</h1><p>通过<code>pip freeze</code>查看当前已经安装的包：</p>
+<p><img data-src="https://i.loli.net/2020/11/15/OfZcXqYnRL412dv.png" alt=""></p>
+<p>安装<strong>virtualenv</strong>（虚拟环境），不同虚拟环境中的包不会互相影响。</p>
           <!--noindex-->
           <!--/noindex-->
         
@@ -832,7 +880,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-03 22:07:16" itemprop="dateModified" datetime="2020-12-03T22:07:16+08:00">2020-12-03</time>
+                <time title="修改时间：2021-02-27 14:37:39" itemprop="dateModified" datetime="2021-02-27T14:37:39+08:00">2021-02-27</time>
               </span>
 
           <br>
@@ -853,240 +901,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="红黑树">红黑树</span></h1><h2><span id="红黑树的性质">红黑树的性质</span></h2><p><img data-src="https://i.loli.net/2020/11/26/4Cu9TpDz5iHwrI6.png" alt="红黑树"></p>
-<p>(添加外结点，将外结点<code>null</code>视作叶子结点。)</p>
-<p>红黑树是一颗满足下列性质的<strong>二叉搜索树</strong>：</p>
-<ol>
-<li><p>每个结点或是红色的，或是黑色的。</p>
-</li>
-<li><p>根结点时黑色的。</p>
-</li>
-<li><p>每个叶结点(NULL)是黑色的。</p>
-</li>
-<li><p>如果一个结点是红色的，则它的两个子结点都是黑色的。</p>
-</li>
-<li><p>对每个结点，从结点到其所有后代叶结点的简单路径上，均包含相同数目的黑色结点。</p>
-</li>
-</ol>
-<p>这些性质通过对任意一条从根到叶子的简单路径上各个结点的颜色进行约束，从而确保没有一条路径会比其他路径长出2倍，因而是<strong><em>近似平衡</em></strong>的。</p>
-<h2><span id="红黑树的基本操作">红黑树的基本操作</span></h2><p>红黑树的插入、删除、查找等操作均与<strong>二叉搜索树</strong>相同。</p>
-<h2><span id="红黑树的调整操作">红黑树的调整操作</span></h2><p>为了维持红黑树的性质，在每一步操作过后均需进行<strong>调整</strong>。</p>
-<h3><span id="插入">插入</span></h3><p>新插入的结点<code>x</code>默认设为红色，其两个叶子节点为黑色。</p>
-<ul>
-<li><p>若<code>x</code>的父节点为黑色，则无需调整。可以看作<code>x</code>的黑叶子节点替换了原来父节点的黑叶子节点，因此路径上的黑色结点数不会变化。</p>
-<p><img data-src="https://i.loli.net/2020/11/26/GOuWlKsMAjJha27.gif" alt="插入3，父节点为黑色，无需调整" style="zoom:80%;"></p>
-</li>
-<li><p>若<code>x</code>的父节点为红色，由于<code>x</code>为红色，因此违反了<strong>性质4</strong>。</p>
-<p>分以下两种情况进行调整：</p>
-<ul>
-<li><p><code>x</code>父亲的兄弟节点为红色。</p>
-<p><strong>1. 插入<code>0</code>：</strong><img data-src="https://i.loli.net/2020/11/26/RZ6NYuHthQxP8Uf.png" alt="插入0"></p>
-<p><strong>2. 父亲<code>1</code>和父亲的兄弟<code>3</code>变为黑色，祖父<code>2</code>变为红色：</strong></p>
-<p><img data-src="https://i.loli.net/2020/11/26/GUDFgJNHBxhw7kY.png" alt="父亲和兄弟变为黑色，祖父变为红色"></p>
-<p><strong>3. 以祖父</strong><code>2</code>为基础重复整个插入调整的过程直至满足条件。（即把祖父当作一个新插入的结点，本例中无需调整）</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>  ​        <strong>整个过程：</strong></p>
-<p>  <img data-src="https://i.loli.net/2020/11/26/jx9ZzOgFS3npNrA.gif" alt="整个过程" style="zoom:80%;"></p>
-<ul>
-<li><p><code>x</code>父亲的兄弟节点为黑色。</p>
-<p>再分两个情况：</p>
-<ul>
-<li><p><code>x</code>、<code>x</code>的父亲、<code>x</code>祖父成直线。（<code>x</code>、<code>x</code>的父亲均为各自父亲的左孩子或者均为右孩子）：</p>
-<p><strong>以下面为例：</strong></p>
-<p><strong>1. 插入</strong><code>0</code>，<strong>成“/”</strong></p>
-<p><img data-src="https://i.loli.net/2020/11/26/F9TfAub284SvHlY.png" alt></p>
-<p><strong>2. 右旋祖父</strong><code>2</code></p>
-<p><img data-src="https://i.loli.net/2020/11/26/yNLuYfKj6UCcIkT.png" alt="右旋2"></p>
-<p><strong>3. 变色：父亲</strong><code>1</code><strong>变成黑色</strong>，<strong>祖父</strong><code>2</code><strong>变成红色</strong></p>
-<p><img data-src="https://i.loli.net/2020/11/26/kGROPYCTh3flvrg.png" alt="变色"></p>
-<p><strong>整个过程：</strong></p>
-<p><img data-src="https://i.loli.net/2020/11/26/2Levklp5HW3wQPK.gif" alt="整个过程" style="zoom:80%;"></p>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>（**\\字形操作正好相反**）
-
-- `x`、`x`的父亲、`x`祖父成折线。（`x`为其父亲的左孩子、`x`的父亲为其父亲的右孩子，或者反之）：
-
-  通过左旋或右旋父节点将这种情况转换为**直线型**。
-
-  **以下面“&lt;”形为例：**
-
-  **1. 插入**`1`
-
-  ![插入1](https://i.loli.net/2020/11/26/b9HIku685G27Aqn.png)
-
-  **2. 左旋父节点**`0`，**此时已经变为直线型，之后的操作与直线完全一致。**
-
-
-
-  ![左旋0](https://i.loli.net/2020/11/26/josRFpPbzE6AfCm.png)
-
-  **3. 右旋祖父**`2`
-
-  ![右旋2](https://i.loli.net/2020/11/26/5JK7bpxFC386uYS.png)
-
-  **4. 变色：父亲**`1`**变成黑色**，**祖父**`2`**变成红色**
-
-  ![变色](https://i.loli.net/2020/11/26/kGROPYCTh3flvrg.png)
-
-  **整个过程：**
-
-  &lt;img src=&quot;https://i.loli.net/2020/11/26/WYUoBEpT1suLnkv.gif&quot; alt=&quot;整个过程&quot; style=&quot;zoom:80%;&quot; /&gt;
-</code></pre><h3><span id="删除">删除</span></h3><p>未完待续</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://czyol6.github.io/2020/11/02/%E6%AC%A1%E7%9F%AD%E8%B7%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom_avatar.jpg">
-      <meta itemprop="name" content="ZaiYi">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZyYee's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/02/%E6%AC%A1%E7%9F%AD%E8%B7%AF/" class="post-title-link" itemprop="url">次短路</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-02 10:52:24 / 修改时间：11:05:59" itemprop="dateCreated datePublished" datetime="2020-11-02T10:52:24+08:00">2020-11-02</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="http://poj.org/problem?id=3255">传送门</a></p>
-<h1 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h1><p>记录最短值和次短值，每次dijkstra更新。<br><strong>注意：</strong></p>
-<ul>
-<li>如果用从que中取出的值更新了最短值，那么就将最短值放入que中。</li>
-<li>如果用从que中取出的值更新了次短值，那么就将次短值放入que中。</li>
-<li>从que中取出值后，设取出的最短/次短值为dist，那么在后续更新中写成$dis[v] = dist + len$而非$dis[v] = dis[u] + len.$，因为无法判断是该值u的最短值或次短值（也可以在状态中加入最短和次短的标记。）</li>
-</ul>
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://czyol6.github.io/2020/07/30/Github%E3%80%81Git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%A6%82%E5%BF%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom_avatar.jpg">
-      <meta itemprop="name" content="ZaiYi">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZyYee's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/30/Github%E3%80%81Git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%A6%82%E5%BF%B5/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-30 20:46:38" itemprop="dateCreated datePublished" datetime="2020-07-30T20:46:38+08:00">2020-07-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-02 11:13:06" itemprop="dateModified" datetime="2020-11-02T11:13:06+08:00">2020-11-02</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Github-Git"><a href="#Github-Git" class="headerlink" title="Github | Git"></a>Github | Git</h1><p>自己关于Github和Git使用的一些笔记，日后会不断补充。</p>
-<!-- toc -->
-<ul>
-<li><a href="#-more-">
+          <h1 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h1><h2 id="红黑树的性质"><a href="#红黑树的性质" class="headerlink" title="红黑树的性质"></a>红黑树的性质</h2><p><img data-src="https://i.loli.net/2020/11/26/4Cu9TpDz5iHwrI6.png" alt="红黑树"></p>
           <!--noindex-->
           <!--/noindex-->
         
@@ -1106,6 +921,9 @@
 
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1172,12 +990,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -1213,7 +1031,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1223,7 +1041,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">19k</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
